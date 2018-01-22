@@ -1,0 +1,199 @@
+/*Styles for Tooltip*/
+.tooltip-box {
+    font-weight: bold;
+    background-color: #ffffff;
+    padding: 3px;
+    z-index: 100000;
+    -webkit-border-radius: 0 0 5px 5px;
+    -moz-border-radius: 0 0 5px 5px;
+    border-radius: 0 0 5px 5px;
+    -webkit-box-sizing: content-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: content-box; /* Firefox, other Gecko */
+    box-sizing: content-box; /* Opera/IE 8+ */
+    -webkit-box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.tooltip-box div, .tooltip-box div img {
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 100%;
+}
+
+/*navigation arrows styles*/
+.arrow {
+    box-sizing:  content-box!important;
+    outline: none !important;
+    display: inline-block;
+    float: left;
+    font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+.arrow a {
+    text-decoration: none !important;
+    color: #626262;
+    padding-left: 1px;
+    display: block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: none !important;
+}
+
+.arrow.left {
+    margin-right: 3px;
+    float: left;
+}
+
+.arrow.left a {
+    float: left;
+}
+
+.arrow.right {
+    margin-left: 3px;
+    float: left;
+}
+
+.arrow.right a {
+    float: left;
+}
+
+.arrow.left a:hover {
+    background: rgb(255, 255, 255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(228, 227, 218, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e3da', GradientType=0); /* IE6-9 */
+
+    -webkit-box-shadow: -1px 0 2px rgba(0, 0, 0, .25);
+    box-shadow: -1px 0 2px rgba(0, 0, 0, .25);
+}
+
+.arrow.right a:hover {
+    background: rgb(255, 255, 255); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(255, 255, 255, 1)), color-stop(100%, rgba(228, 227, 218, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(228, 227, 218, 1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e3da', GradientType=0); /* IE6-9 */
+
+    -webkit-box-shadow: 1px 0 2px rgba(0, 0, 0, .25);
+    box-shadow: 1px 0 2px rgba(0, 0, 0, .25);
+}
+
+.arrow.right a:active, .arrow.left a:active {
+    background: rgba(240, 240, 240, 1);
+    background: -moz-linear-gradient(top, rgba(240, 240, 240, 1) 0%, rgba(163, 163, 163, 1) 100%);
+    background: -webkit-linear-gradient(top, rgba(240, 240, 240, 1) 0%, rgba(163, 163, 163, 1) 100%);
+    background: -o-linear-gradient(top, rgba(240, 240, 240, 1) 0%, rgba(163, 163, 163, 1) 100%);
+    background: -ms-linear-gradient(top, rgba(240, 240, 240, 1) 0%, rgba(163, 163, 163, 1) 100%);
+    background: linear-gradient(to bottom, rgba(240, 240, 240, 1) 0%, rgba(163, 163, 163, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f0f0', endColorstr='#a3a3a3', GradientType=0);
+
+    -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
+}
+
+.arrow.right a:active {
+    padding-left: 0;
+    padding-right: 2px;
+}
+
+.arrow.left a:active {
+    padding-left: 2px;
+}
+
+/*slider styles*/
+a.carousel-control.control-dead {
+    opacity: 0.3;
+    display: block;
+    pointer-events: none;
+}
+
+.carousel-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-content {
+    width: 20000px;
+}
+
+.carousel-content .slide {
+    float: left;
+    width: auto;
+}
+.colorpicker-box {
+    float: left
+}
+.colorpicker-image-box a {
+    outline: none !important;
+}
+
+dl.list-options.left,
+dl.list-options.left dd,
+dl.list-options.left dt,
+dl.list-box.left,
+dl.list-box.left dd,
+dl.list-box.left dt{
+    float: left;
+}
+
+dl.list-options.right,
+dl.list-options.right dd,
+dl.list-options.right dt,
+dl.list-box.right,
+dl.list-box.right dd,
+dl.list-box.right dt{
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+dl.list-box.right dd,
+dl.list-box.right dt{
+    width: 100%;
+    display: inline-block;
+    text-align: right;
+    margin-left: auto;
+    margin-right: auto;
+}
+dl.list-options.center,
+dl.list-box.center{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+dl.list-box.center dd,
+dl.list-box.center dt{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+dl.list-options.center dd,
+dl.list-options.center dt{
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.hidden-default select, .hidden-default ul{
+    visibility: hidden;
+    position: absolute;
+}

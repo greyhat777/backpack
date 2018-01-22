@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+  <modules>
+    <Solwin_Bannerslider>
+      <active>true</active>
+      <codePool>community</codePool>
+    </Solwin_Bannerslider>
+  </modules>
+</config>

@@ -1,0 +1,216 @@
+<?php
+/**
+ * Attribute options control
+ *
+ * @see Mage_Adminhtml_Block_Catalog_Product_Attribute_Edit_Tab_Options
+ */
+
+/**
+ * @var Ave_ColorSwatch_Block_Adminhtml_Catalog_Product_Attribute_Edit_Tab_Color $this
+ */
+?>
+<script>
+    jscolor.dir = "<?php echo Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_JS);?>/jscolor/";
+</script>
+<style>
+    .preview-image {float: left; margin-right: 10px; width: 80px; height: 70px;}
+    .preview-image img {max-height: 60px; max-width: 75px; border: 1px solid lightgrey;}
+    .btnHolder { padding: 10px 0; width: 200px; }
+    .btnHolder button.delete {float: right;}
+    button span span {
+        background: none repeat scroll 0 0 transparent !important;
+        display: inline !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    #upload_target {display: none;}
+    table.dynamic-grid {width: 100%;}
+    table.dynamic-grid input[type="file"] {width: 100%;}
+    .file_upload_form {float: left; }
+
+</style>
+
+<?php $options = $this->getColorData(); ?>
+
+<div class="entity-edit">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Color Swatch Activation</h4>
+    </div>
+    <div class="box form-list">
+        <input type="hidden" value="0" name="is_ave_color_swatch" id="is_ave_color_swatch_hidden">
+        <input type="checkbox"
+               onclick="this.value = this.checked ? 1 : 0;
+                   if (this.checked) {
+                        $$('#color-option-holder').invoke('removeClassName', 'no-display');
+                   } else {
+                        $$('#color-option-holder').invoke('addClassName', 'no-display');
+                   }"
+               title="Activate Color Swatch"
+               value="1"
+               name="is_ave_color_swatch"
+               id="is_ave_color_swatch"
+               <?php if ($this->isActiveStatus()) {echo 'checked="checked"';} ?>
+               <?php if (empty($options) || !$this->isCorrectAttributeType()) {echo ' disabled="disabled"';} ?>
+        >
+        <label class="normal" for="is_ave_color_swatch">Activate Color Swatch (Please check to apply Color Swatch to this attribute)</label>
+        <?php if (!$this->isCorrectAttributeType()) {
+            echo '<p class="note">Type of attribute is wrong. Please choose a \'Dropdown\' type of attribute.</p>';
+        } elseif(empty($options)) {
+            echo '<p class="note">No options available. Please add options for this attribute and save them.</p>';
+        } ?>
+    </div>
+</div>
+
+<iframe id="upload_target" name="upload_target" src=""></iframe>
+<script type="text/javascript">
+    function in_array(needle, haystack) {
+        var found = false, key;
+        for (key in haystack) {
+            if ( haystack[key] == needle) {
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
+
+    function initUploadBtn(form, iframe, form_key, fileInput) {
+        form.onsubmit = function () {
+            var allowedExtensions = ['<?php echo implode("', '", Mage::helper('ave_colorswatch/image')->getAllowedImageExtensions());?>'];
+            var imageExtension = fileInput.value.substr(-3);
+            if ('' == imageExtension) {
+                return false;
+            } else if (!in_array(imageExtension, allowedExtensions)) {
+                alert('The chosen file is not allowed to be uploaded. Please re-check the allowed file formats.');
+                return false;
+            }
+            form_key.value = window.FORM_KEY;
+            form_key.name = 'form_key';
+            iframe.onload = uploadDone;
+        }
+    }
+
+    function uploadDone() { //Function will be called when iframe is loaded
+        var ret = frames['upload_target'].document.getElementsByTagName("body")[0].innerHTML;
+        var data = eval("(" + ret + ")");
+        $$('.form_key_item').each(function(target){
+            target.name = 'form_key_temp';
+        });
+        //console.log('done', data.status, data.html_id);
+        //if (data.status == 'success' && data.html_id) {       перший раз статус невідомий, треба дослідити
+            var imageHolder = $$('#' + data.html_id + '-row .preview-image')[0];
+            imageHolder.innerHTML = '<img src="' + data.url + '" alt="Preview image" />';
+            var deleteButton = $(data.html_id + '-file-delete');
+             if (deleteButton) {
+                 deleteButton.show();
+             }
+        /*} else if (data.error) {
+            alert("Upload Failed: " + data.error);
+        }*/
+    }
+    function deleteOptionImage(deleteUrl, htmlId) {
+        if (confirm('Do you really want to delete this image?')) {
+            new Ajax.Request(deleteUrl, {
+                method: 'post',
+                parameters: {},
+                onSuccess: function (data) {
+                    var response = data['responseText'].evalJSON();
+                    if (response.status == 'success') {
+                        var imageHolder = $$('#' + htmlId + '-row .preview-image')[0];
+                        imageHolder.innerHTML = '';
+                        var deleteButton = $(htmlId + '-file-delete');
+                        if (deleteButton) {
+                            deleteButton.hide();
+                        }
+                    }
+                }
+            });
+        }
+        return false;
+    }
+</script>
+
+<div id="color-option-holder" class="entity-edit<?php if(empty($options) || !$this->isActiveStatus()) echo ' no-display'; ?>">
+    <div class="entry-edit-head">
+        <h4 class="icon-head head-edit-form fieldset-legend">Manage Colors and Images</h4>
+    </div>
+    <div class="box">
+        <div class="hor-scroll">
+             <ul class="messages">
+                <li class="notice-msg">
+                    <ul>
+                        <li>Please note that if there is an image uploaded the color won't be shown on the user end. Allowed image extensions to upload are <?php echo implode(", ", Mage::helper('ave_colorswatch/image')->getAllowedImageExtensions()); ?>.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <table cellspacing="0" id="attribute-labels-table" class="dynamic-grid">
+                <tbody>
+                <tr>
+                    <th><?php echo Mage::helper('catalog')->__('Name'); ?></th>
+                    <th><?php echo Mage::helper('catalog')->__('Color'); ?></th>
+                    <th><?php echo Mage::helper('catalog')->__('Image'); ?></th>
+                </tr>
+                <?php foreach ($options as $option) : ?>
+
+                <?php $config = $this->getConfigObj($option->getData('option_id')); ?>
+                <?php $htmlId = "attribute-image-" . $option->getId(); ?>
+
+                <tr id="<?php echo $htmlId ?>-row">
+                    <td style="min-width: 200px;">
+                        <?php echo $option->getValue(); ?>
+                    </td>
+                    <td style="min-width: 130px;">
+                        <input type="text" value="<?php echo $option->getColor(); ?>"
+                               name="option[ave_color][<?php echo $option->getData('option_id'); ?>]"
+                               class="input-text color {pickerMode:'HVS'}">
+                    </td>
+                    <td style="width: 100%;">
+                        <div class="preview-image">
+                            <?php if ($option->getImage()) {
+                                echo '<a href="' . Mage::helper('ave_colorswatch/image')->getBaseUrl() . '/'
+                                                 . $option->getAttributeId() . '/'
+                                                 . $option->getImage() . '" target="_blank"><img src="'
+                                     . Mage::helper('ave_colorswatch/image')->getAdminPreviewImageUrl($option->getImage(), $option->getAttributeId())
+                                     . '" alt="Picture preview"/></a>';
+                            }?>
+                        </div>
+
+
+                        <form id="file_upload_form_<?php echo $htmlId ?>" class="file_upload_form" method="post" enctype="multipart/form-data"
+                              action="<?php echo $config['url'];?>" target="upload_target">
+                            <input name="file" type="file" id="file_<?php echo $htmlId; ?>"/>
+                            <input name="html_id" value="<?php echo $htmlId ?>" type="hidden"/>
+                            <input name="form_key_temp" id="form_key_<?php echo $htmlId ?>" class="form_key_item" type="hidden"/>
+                            <input type="hidden" name="MAX_FILE_SIZE" value="<?php echo $this->getDataMaxSize(); ?>" />
+
+                            <div class="btnHolder">
+                                <button type="submit" name="action">Upload Image</button>
+                                <button onclick="return deleteOptionImage(
+                                    '<?php echo $this->getDeleteUrl($option->getData("option_id")); ?>',
+                                    '<?php echo $htmlId; ?>');"
+                                        class="scalable delete"
+                                    <?php if (!$option->getImage()) {
+                                        echo ' style="display: none;" ';
+                                    } ?>
+                                        type="button"
+                                        title="Delete file"
+                                        id="<?php echo $htmlId ?>-file-delete">
+                                                            <span><span><span><?php echo Mage::helper('catalog')->__(
+                                                                            'Delete File'
+                                                                        ); ?></span></span></span></button>
+                            </div>
+                        </form>
+                        <script type="text/javascript">
+                            initUploadBtn($('file_upload_form_<?php echo $htmlId ?>'), $('upload_target'),
+                                $('form_key_<?php echo $htmlId ?>'), $('file_<?php echo $htmlId; ?>'));
+                        </script>
+
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

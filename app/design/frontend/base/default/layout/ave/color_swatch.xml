@@ -1,0 +1,312 @@
+<?xml version="1.0"?>
+<layout>
+    <tag_product_list translate="label">
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/category.css</stylesheet>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker-list.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="search_result_list">
+            <block type="ave_colorswatch/listItem" name="ave_color_swatch"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/list_item.phtml"/>
+        </reference>
+    </tag_product_list>
+    <catalog_category_default>
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/category.css</stylesheet>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker-list.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="product_list">
+            <block type="ave_colorswatch/listItem" name="ave_color_swatch"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/list_item.phtml"/>
+        </reference>
+    </catalog_category_default>
+    <catalog_category_layered>
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/category.css</stylesheet>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker-list.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="product_list">
+            <block type="ave_colorswatch/listItem" name="ave_color_swatch"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/list_item.phtml"/>
+        </reference>
+    </catalog_category_layered>
+    <PRODUCT_TYPE_configurable>
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <action method="removeItem" ifconfig="ave_color_swatch/product_list_group/product_module_enable">
+                <type>skin_js</type>
+                <name>js/configurableswatches/swatches-product.js</name>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/product_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/configurable.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+             <action method="addItem" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_view_group/product_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="product.info.options.configurable">
+            <action method="setTemplate" ifconfig="ave_color_swatch/product_view_group/product_module_enable">
+                <template>ave/color_swatch/configurable.phtml</template>
+            </action>
+        </reference>
+    </PRODUCT_TYPE_configurable>
+    <catalogsearch_result_index>
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/category.css</stylesheet>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker-list.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="search_result_list">
+            <block type="ave_colorswatch/listItem" name="ave_color_swatch"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/list_item.phtml"/>
+        </reference>
+    </catalogsearch_result_index>
+    <catalogsearch_advanced_result>
+        <reference name="head">
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>prototype/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/tooltip.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/carouselka.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/global-functions.js</script>
+            </action>
+            <block type="core/template" template="ave/color_swatch/global.phtml"/>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/common-styles.css</stylesheet>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_css</type>
+                <stylesheet>css/ave/color-swatch/category.css</stylesheet>
+            </action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/product.js</script>
+            </action>
+            <action method="addJs"><script>varien/product_options.js</script></action>
+            <action method="addJs" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <script>varien/configurable.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/color-picker-list.js</script>
+            </action>
+            <action method="addItem" ifconfig="ave_color_swatch/product_list_group/list_module_enable">
+                <type>skin_js</type>
+                <script>js/ave/color-swatch/sp-config.js</script>
+            </action>
+            <block type="core/template"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/style.phtml"/>
+        </reference>
+        <reference name="search_result_list">
+            <block type="ave_colorswatch/listItem" name="ave_color_swatch"
+                   ifconfig="ave_color_swatch/product_list_group/list_module_enable"
+                   template="ave/color_swatch/list_item.phtml"/>
+        </reference>
+    </catalogsearch_advanced_result>
+</layout>

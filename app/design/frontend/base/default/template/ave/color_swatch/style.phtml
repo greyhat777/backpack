@@ -1,0 +1,188 @@
+<?php
+$configHelper = Mage::helper('ave_colorswatch/config');
+$tooltipWidth = $configHelper->getConfigValue('product_tooltip_width');
+$tooltipHeight = $configHelper->getConfigValue('product_tooltip_height');
+$tooltipListWidth = $configHelper->getListConfig('list_tooltip_width');
+$tooltipListHeight = $configHelper->getListConfig('list_tooltip_height');
+$listOptionWidth = $configHelper->getStyleValue('list_option_width') ? $configHelper->getStyleValue('list_option_width') : 20;
+$listOptionHeight = $configHelper->getStyleValue('list_option_height') ? $configHelper->getStyleValue('list_option_height') : 20;
+$borderSize = $configHelper->getStyleValue('option_border_size');
+$borderColor = $configHelper->getStyleValue('option_border_color');
+$styleForBorder = $borderSize == '0' ? '' : 'border: ' . $borderSize . 'px solid ' . $borderColor . ' !important;';
+$activeBorderSize = $configHelper->getStyleValue('active_option_border_size');
+$activeBorderColor = $configHelper->getStyleValue('active_option_border_color');
+$swatchHeight = $configHelper->getStyleValue('swatch_height');
+$swatchWidth = $configHelper->getStyleValue('swatch_width') ? $configHelper->getStyleValue('swatch_width') : 35;
+$attrSmallSwatchesIds = $configHelper->getStyleValue('swatch_attributes');
+$swatchWidthSmall = $configHelper->getStyleValue('swatch_width_small') ? $configHelper->getStyleValue('swatch_width_small') : 30;
+$swatchHeightSmall = $configHelper->getStyleValue('swatch_height_small') ? $configHelper->getStyleValue('swatch_height_small') : 30;
+$listShowSlider = $configHelper->getListConfig('list_show_slider');
+$halfSwatchHeight = $swatchHeight / 2;
+$halfSwatchHeightSmall = $swatchHeightSmall / 2;
+$halfListOptionHeight = $listShowSlider ? $listOptionHeight / 2 : 0;
+?>
+<style type="text/css">
+    .swatch-box {
+        pointer-events: none;
+        position: relative;
+        width: <?php echo $swatchWidth?>px;
+        height: <?php echo $swatchHeight ?>px;
+    }
+
+    .colorpicker-image-box {
+        box-sizing: border-box;
+    <?php echo $styleForBorder?> overflow: hidden;
+    }
+
+    ul.attribute-list li a div {
+    <?php echo $styleForBorder?> overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .colorpicker-image-box.active {
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        border: <?php echo $activeBorderSize . 'px solid ' . $activeBorderColor ?> !important;
+    }
+
+    ul.attribute-list li.active a div {
+        -webkit-transition-duration: 0.2s;
+        transition-duration: 0.2s;
+        border: <?php echo $activeBorderSize . 'px solid ' . $activeBorderColor ?> !important;
+    }
+    /*div.tooltip-container {
+        border: 1px solid #ddd;
+    }*/
+    div.tooltip-box div.tooltip-container {
+        width: <?php echo $tooltipWidth ?>px;
+        height: <?php echo $tooltipHeight ?>px;
+    }
+
+    div.tooltip-box {
+        width: <?php echo $tooltipWidth ?>px;
+        min-height: <?php echo $tooltipHeight ?>px;
+    }
+
+    div.tooltip-list {
+        width: <?php echo $tooltipListWidth ?>px !important;
+        min-height: <?php echo $tooltipListHeight ?>px !important;
+    }
+
+    div.tooltip-list div.tooltip-container {
+        display: flex;
+        width: <?php echo $tooltipListWidth ?>px !important;
+        height: <?php echo $tooltipListHeight ?>px !important;
+    }
+
+    div.tooltip-list img {
+        vertical-align:middle;
+        /*width: <?php echo $tooltipListWidth ?>px !important;
+        height: <?php echo $tooltipListHeight ?>px !important;*/
+    }
+
+    div.colorpicker-image-box {
+        width: <?php echo $listOptionWidth ?>px !important;
+        height: <?php echo $listOptionHeight ?>px !important;
+    }
+
+    .view.arrow {
+        width: <?php echo $halfSwatchHeight?>px;
+        height: <?php echo $swatchHeight?>px;
+        font-size: <?php echo $swatchHeight?>px;
+    }
+
+    .view.arrow a {
+        width: <?php echo $halfSwatchHeight?>px;
+        height: <?php echo $swatchHeight?>px;
+        line-height: <?php echo $swatchHeight * 0.86?>px;
+    }
+
+    .view.arrow.left a {
+        -webkit-border-radius: <?php echo $halfSwatchHeight?>px 0 0  <?php echo $halfSwatchHeight?>px;
+        -moz-border-radius: <?php echo $halfSwatchHeight?>px 0 0  <?php echo $halfSwatchHeight?>px;
+        -ms-border-radius: <?php echo $halfSwatchHeight?>px 0 0  <?php echo $halfSwatchHeight?>px;
+        -o-border-radius: <?php echo $halfSwatchHeight?>px 0 0  <?php echo $halfSwatchHeight?>px;
+        border-radius: <?php echo $halfSwatchHeight?>px 0 0  <?php echo $halfSwatchHeight?>px;
+    }
+
+    .view.arrow.right a {
+        -webkit-border-radius: 0  <?php echo $halfSwatchHeight?>px  <?php echo $halfSwatchHeight?>px 0;
+        -moz-border-radius: 0  <?php echo $halfSwatchHeight?>px  <?php echo $halfSwatchHeight?>px 0;
+        -ms-border-radius: 0  <?php echo $halfSwatchHeight?>px  <?php echo $halfSwatchHeight?>px 0;
+        -o-border-radius: 0  <?php echo $halfSwatchHeight?>px  <?php echo $halfSwatchHeight?>px 0;
+        border-radius: 0  <?php echo $halfSwatchHeight?>px  <?php echo $halfSwatchHeight?>px 0;
+    }
+
+    .list.arrow {
+        margin-top: 3px;
+        width: <?php echo $halfListOptionHeight?>px;
+        height: <?php echo $listOptionHeight?>px;
+        font-size: <?php echo $listOptionHeight?>px;
+    }
+
+    .list.arrow a {
+        width: <?php echo $halfListOptionHeight?>px;
+        height: <?php echo $listOptionHeight?>px;
+        line-height: <?php echo $listOptionHeight * 0.86?>px;
+    }
+
+    .list.arrow.right a {
+        -webkit-border-radius: 0  <?php echo $halfListOptionHeight?>px  <?php echo $halfListOptionHeight?>px 0;
+        -moz-border-radius: 0  <?php echo $halfListOptionHeight?>px  <?php echo $halfListOptionHeight?>px 0;
+        -ms-border-radius: 0  <?php echo $halfListOptionHeight?>px  <?php echo $halfListOptionHeight?>px 0;
+        -o-border-radius: 0  <?php echo $halfListOptionHeight?>px  <?php echo $halfListOptionHeight?>px 0;
+        border-radius: 0  <?php echo $halfListOptionHeight?>px  <?php echo $halfListOptionHeight?>px 0;
+    }
+
+    .list.arrow.left a {
+        -webkit-border-radius: <?php echo $halfListOptionHeight?>px 0 0  <?php echo $halfListOptionHeight?>px;
+        -moz-border-radius: <?php echo $halfListOptionHeight?>px 0 0  <?php echo $halfListOptionHeight?>px;
+        -ms-border-radius: <?php echo $halfListOptionHeight?>px 0 0  <?php echo $halfListOptionHeight?>px;
+        -o-border-radius: <?php echo $halfListOptionHeight?>px 0 0  <?php echo $halfListOptionHeight?>px;
+        border-radius: <?php echo $halfListOptionHeight?>px 0 0  <?php echo $halfListOptionHeight?>px;
+    }
+    .ave.list-box {
+        overflow: hidden;
+    }
+
+    <?php
+    if (!function_exists('getCssRuleByAttributeId4SmallColorSwatch')) {
+        function getCssRuleByAttributeId4SmallColorSwatch($attrId, $swatchHeightSmall, $swatchWidthSmall, $halfSwatchHeightSmall)
+        { ?>
+
+        .colorpicker_attribute_<?php echo $attrId; ?> .option-box, .colorpicker_attribute_<?php echo $attrId; ?> .swatch-box {
+            height: <?php echo $swatchHeightSmall; ?>px;
+            width: <?php echo $swatchWidthSmall; ?>px;
+        }
+        #slider-container-<?php echo $attrId; ?> .view.arrow.right a {
+            -webkit-border-radius: 0  <?php echo $halfSwatchHeightSmall?>px  <?php echo $halfSwatchHeightSmall?>px 0;
+            -moz-border-radius: 0  <?php echo $halfSwatchHeightSmall?>px  <?php echo $halfSwatchHeightSmall?>px 0;
+            -ms-border-radius: 0  <?php echo $halfSwatchHeightSmall?>px  <?php echo $halfSwatchHeightSmall?>px 0;
+            -o-border-radius: 0  <?php echo $halfSwatchHeightSmall?>px  <?php echo $halfSwatchHeightSmall?>px 0;
+            border-radius: 0  <?php echo $halfSwatchHeightSmall?>px  <?php echo $halfSwatchHeightSmall?>px 0;
+        }
+        #slider-container-<?php echo $attrId; ?> .view.arrow.left a {
+            -webkit-border-radius: <?php echo $halfSwatchHeightSmall?>px 0 0  <?php echo $halfSwatchHeightSmall?>px;
+            -moz-border-radius: <?php echo $halfSwatchHeightSmall?>px 0 0  <?php echo $halfSwatchHeightSmall?>px;
+            -ms-border-radius: <?php echo $halfSwatchHeightSmall?>px 0 0  <?php echo $halfSwatchHeightSmall?>px;
+            -o-border-radius: <?php echo $halfSwatchHeightSmall?>px 0 0  <?php echo $halfSwatchHeightSmall?>px;
+            border-radius: <?php echo $halfSwatchHeightSmall?>px 0 0  <?php echo $halfSwatchHeightSmall?>px;
+        }
+        #slider-container-<?php echo $attrId; ?> .view.arrow {
+            width: <?php echo $halfSwatchHeightSmall?>px;
+            height: <?php echo $swatchHeightSmall?>px;
+            font-size: <?php echo $swatchHeightSmall?>px;
+        }
+        #slider-container-<?php echo $attrId; ?> .view.arrow a {
+            width: <?php echo $halfSwatchHeightSmall?>px;
+            height: <?php echo $swatchHeightSmall?>px;
+            line-height: <?php echo $swatchHeightSmall * 0.86?>px;
+        }
+        <?php }
+    }
+    if (!empty($attrSmallSwatchesIds) && ($idsSmallAttrib = explode(',', $attrSmallSwatchesIds))) {
+        foreach ($idsSmallAttrib as $id) {
+            getCssRuleByAttributeId4SmallColorSwatch($id, $swatchHeightSmall, $swatchWidthSmall, $halfSwatchHeightSmall);
+        }
+    }?>
+</style>

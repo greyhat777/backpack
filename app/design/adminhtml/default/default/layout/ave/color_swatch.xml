@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_system_config_edit_ave_color_swatch>
+        <reference name = "head">
+            <action method="addJs"><file>jscolor/jscolor.js</file></action>
+            <action method = "addItem">
+                <type>skin_js</type>
+                <script>js/ave/color_swatch/system_config.js</script>
+            </action>
+        </reference>
+    </adminhtml_system_config_edit_ave_color_swatch>
+    <adminhtml_catalog_product_attribute_edit>
+        <block type = "adminhtml/catalog_product_attribute_edit_tabs" name = "attribute_edit_tabs">
+            <action method = "addTab" translate = "title">
+                <name>ave_color_swatch</name>
+                <block>ave_colorswatch/adminhtml_catalog_product_attribute_edit_tab_color</block>
+            </action>
+        </block>
+        <reference name = "head">
+            <action method = "addItem">
+                <type>skin_js</type>
+                <script>js/ave/color_swatch/attribute_config.js</script>
+            </action>
+            <action method = "addItem">
+                <type>js</type>
+                <script>jscolor/jscolor.js</script>
+            </action>
+        </reference>
+    </adminhtml_catalog_product_attribute_edit>
+</layout>

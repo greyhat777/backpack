@@ -1,0 +1,92 @@
+<?php
+$slide_status = Mage::getStoreConfig('generalsetting/bannerslidergroup/enable');
+$sliderwidth = Mage::getStoreConfig('generalsetting/bannerslidergroup/imgwidth');
+$sliderheight = Mage::getStoreConfig('generalsetting/bannerslidergroup/imgheight');
+$userCss = (Mage::getStoreConfig('generalsetting/bannerslidergroup/userCss') == 1) ? 'true' : 'false';
+$transitionspeed = Mage::getStoreConfig('generalsetting/bannerslidergroup/transitionspeed');
+$duration = Mage::getStoreConfig('generalsetting/bannerslidergroup/duration');
+$showNavigation = (Mage::getStoreConfig('generalsetting/bannerslidergroup/showNavigation') == 1) ? 'true' : 'false';
+$navigationColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/navigationColor');
+$navigationHoverColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/navigationHoverColor');
+$navigationHighlightColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/navigationHighlightColor');
+$navigationNumberColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/navigationNumberColor');
+$positionNavigation = Mage::getStoreConfig('generalsetting/bannerslidergroup/positionNavigation');
+$navigationType = Mage::getStoreConfig('generalsetting/bannerslidergroup/navigationType');
+$showControl = (Mage::getStoreConfig('generalsetting/bannerslidergroup/showControl') == 1) ? 'true' : 'false';
+$controlColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/controlColor');
+$controlBackgroundColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/controlBackgroundColor');
+$positionControl = Mage::getStoreConfig('generalsetting/bannerslidergroup/positionControl');
+$transition = Mage::getStoreConfig('generalsetting/bannerslidergroup/transition');
+$showProgress = (Mage::getStoreConfig('generalsetting/bannerslidergroup/showProgress') == 1) ? 'true' : 'false';
+;
+$progressColor = Mage::getStoreConfig('generalsetting/bannerslidergroup/progressColor');
+$pauseOnHover = (Mage::getStoreConfig('generalsetting/bannerslidergroup/pauseOnHover') == 1) ? 'true' : 'false';
+;
+
+if ($slide_status == 1) {
+    ?>
+    <script type="text/javascript" src="<?php echo Mage::getBaseUrl('js') . 'bannerslider/jquery-1.js'; ?>"></script>
+    <script type="text/javascript" src="<?php echo Mage::getBaseUrl('js') . 'bannerslider/jquery.devrama.slider.js'; ?>"></script>
+    <div id="my-slide">
+        <?php
+        $connection = Mage::getSingleton('core/resource')->getConnection('core_write');
+        $prefix = Mage::getConfig()->getTablePrefix();
+        $tblname = $prefix . 'solwinbannerslider';
+        $sql = $connection->query("select * from $tblname where status='0'  ORDER BY imageorder ASC ");
+        while ($row1 = $sql->fetch()) {
+            $title = $row1["title"];
+            $description = $row1["description"];
+            $showdesc = $row1["showdesc"];
+            $urlx = $row1["image"];
+            $media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
+            $imgurl = $media_url . $urlx;
+            $url = $row1["url"];
+            $target = $row1["target"];
+            ?>
+            <a href="<?php echo $url; ?>" target="<?php echo $target; ?>">
+                <img data-lazy-src="<?php echo $imgurl; ?>" alt="<?php echo $title; ?>" title="<?php echo $title; ?>">
+                <?php
+                if ($showdesc) {
+                    ?>
+                    <div class="banner-desc">
+                        <h2><?php echo $description; ?></h2>
+                    </div>
+                <?php } ?>
+            </a>
+        <?php } ?>
+    </div>
+    <script type="text/javascript">
+        jQuery.noConflict();
+        jQuery(document).ready(function () {
+            jQuery('#my-slide').DrSlider({
+                width: '<?php echo $sliderwidth ?>',
+                height: '<?php echo $sliderheight ?>',
+                userCSS: <?php echo $userCss ?>,
+                transitionSpeed: <?php echo $transitionspeed ?>,
+                duration: <?php echo $duration ?>,
+                showNavigation: <?php echo $showNavigation ?>,
+                navigationColor: '<?php echo $navigationColor ?>',
+                navigationHoverColor: '<?php echo $navigationHoverColor ?>',
+                navigationHighlightColor: '<?php echo $navigationHighlightColor ?>',
+                navigationNumberColor: '<?php echo $navigationNumberColor ?>',
+                positionNavigation: '<?php echo $positionNavigation ?>',
+                navigationType: '<?php echo $navigationType ?>',
+                showControl: <?php echo $showControl ?>,
+                controlColor: '<?php echo $controlColor ?>',
+                controlBackgroundColor: '<?php echo $controlBackgroundColor ?>',
+                positionControl: '<?php echo $positionControl ?>',
+                transition: '<?php echo $transition ?>',
+                showProgress: <?php echo $showProgress ?>,
+                progressColor: '<?php echo $progressColor ?>',
+                pauseOnHover: <?php echo $pauseOnHover ?>,
+            });
+        });
+    </script>
+    <style>
+        .banner-desc{
+            position: absolute;
+            top: 10%;
+            left: 10%;
+        }
+    </style>
+<?php } ?>

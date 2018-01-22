@@ -1,0 +1,66 @@
+<?php
+$_product = $this->getProduct();
+$productId = $_product->getId();
+$_attributes = Mage::helper('core')->decorateArray($this->getAllowAttributes());
+$displayingDefaultInput = (Mage::getStoreConfig('ave_color_swatch/product_list_group/list_show_default_input')) == 1
+    ? 'visible' : 'hidden; height: 0; position: absolute;';
+$attributesKeys = array();
+$configHelper = Mage::helper('ave_colorswatch/config');
+$swatchShape = $configHelper->getStyleValue('swatch_shape');
+$configHelper->getListConfig($this->getMode() . '_swatch_float');
+?>
+<?php if ($_product->isSaleable() && count($_attributes)): ?>
+    <div class="clear"></div>
+    <dl id="product<?php echo $productId; ?>"
+        class="ave list-box <?php echo $configHelper->getListConfig($this->getMode() . '_swatch_float'); ?>">
+        <?php
+        $tagInfoModel = Mage::getModel('ave_colorswatch/attribute');
+        foreach ($_attributes as $_attribute):
+            $tagInfoModel->load($_attribute->getAttributeId());
+            $isColorPicker = $tagInfoModel->getData(Ave_ColorSwatch_Model_Observer::IS_COLOR_SWATCH);
+            ?>
+            <dt><label class="required"><em>*</em> <?php echo $_attribute->getLabel() ?></label></dt>
+            <div class="clear"></div>
+            <dd<?php
+                if ($_attribute->decoratedIsLast) { ?> class="last"<?php } ?>>
+                <?php if ($isColorPicker) { ?>
+                    <div id="slider-container-<?php echo $_attribute->getAttributeId() . '-product' . $productId ?>"
+                         class="input-box colorPickerHolder slider-container <?php echo $swatchShape; ?>">
+                    </div>
+                    <div class="clear"></div>
+                    <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]"
+                            id="attribute<?php echo $_attribute->getAttributeId() ?>"
+                            class="required-entry super-attribute-select <?php echo $_attribute->getAttributeId() . '-product' . $productId ?>"
+                            style="visibility: <?php echo $displayingDefaultInput ?>">
+                        <option><?php echo $this->__('Choose an Option...') ?></option>
+                    </select>
+                <?php } else { ?>
+                    <select name="super_attribute[<?php echo $_attribute->getAttributeId() ?>]"
+                            id="attribute<?php echo $_attribute->getAttributeId() ?>"
+                            class="required-entry super-attribute-select <?php echo $_attribute->getAttributeId() . '-product' . $productId ?>">
+                        <option><?php echo $this->__('Choose an Option...') ?></option>
+                    </select>
+                <?php } ?>
+            </dd>
+            <div class="clear"></div>
+            <?php array_push($attributesKeys, $_attribute->getAttributeId());
+        endforeach; ?>
+    </dl>
+    <div class="clear"></div>
+    <script type="text/javascript">
+        var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+        if (typeof ave_colorSwatches == 'undefined') {
+            var ave_colorSwatches = {};
+        }
+        if (typeof (ave_colorSwatches.config) == 'undefined') {
+            ave_colorSwatches.config = <?php echo $this->getConfig()?>;
+        }
+        var spConfig = new Ave.SpConfig(null, <?php echo $configHelper->getJsonConfig($_product) ?>,
+            optionsPrice, 'list', null, '<?php echo (string)$this->getMode();?>');
+        ave_colorSwatches[<?php echo $productId;?>] =
+            new Ave.ColorPickerList(
+                <?php echo Mage::helper('ave_colorswatch/config')->getSimpleProductData($this->getProduct(), 'list', $this->getMode());?>,
+                spConfig, "<?php echo $this->__('Add to Cart'); ?>"
+            );
+    </script>
+<?php endif; ?>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Ave_ColorSwatch>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Ave_ColorSwatch>
+    </modules>
+</config>

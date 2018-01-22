@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>Solwin_Bannerslider</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license uri="http://opensource.org/licenses/osl-3.0.php">OSL v3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Responsive Banner Slider with fully cusomizable and manageable from admin.</summary>
+    <description>Compatible with any mobile and desktop screen with jQuery. Single Javascript file, CSS Customizable, User defined Navigation/Control available.</description>
+    <notes>Fully responsive banner slider with single javascript file.</notes>
+    <authors><author><name>Sanjay Dabhoya</name><user>solwin</user><email>stdabhoya@yahoo.com</email></author></authors>
+    <date>2015-08-04</date>
+    <time>04:53:19</time>
+    <contents><target name="mageetc"><dir name="modules"><file name="Solwin_Bannerslider.xml" hash="31d7584e58efcfa45a6a4a0ecd163bcd"/></dir></target><target name="magecommunity"><dir name="Solwin"><dir name="Bannerslider"><dir name="Block"><dir name="Adminhtml"><dir name="Bannerslider"><dir name="Edit"><file name="Form.php" hash="f820887f01feeea42c30ff4610e13396"/><dir name="Tab"><file name="Form.php" hash="39b4017fecf33b9b26d87a6d400a1ad3"/></dir><file name="Tabs.php" hash="28b0bd4765ad16015e2da22a442245be"/></dir><file name="Edit.php" hash="2cbee1f9c3cd8eae16ec02c2447cab59"/><file name="Grid.php" hash="b04efa0a7bf473e9dbc22fea176cf29e"/></dir><file name="Bannerslider.php" hash="0fa48f4f763b796c800574b5f92585d0"/><dir name="Renderer"><file name="Image.php" hash="034b8650cfa967007c3b4a3305b839f3"/></dir></dir><file name="Index.php" hash="d50713e97a404ab3bfab3939f932e30b"/></dir><dir name="Helper"><file name="Data.php" hash="a28e9b0a5d2a1511387ed75e4e8b7d3b"/></dir><dir name="Model"><file name="Bannerslider.php" hash="a8b2701f2ebc1bf545a2831ea1de779f"/><dir name="Mysql4"><dir name="Bannerslider"><file name="Collection.php" hash="471e53022c289745827127d541fa6af7"/></dir><file name="Bannerslider.php" hash="a72bc2ff94d432ac683cdb51b573fb23"/></dir><file name="Options.php" hash="74d13131952a44c6a99c6c0c36157bdb"/></dir><dir name="controllers"><dir name="Adminhtml"><file name="BannersliderController.php" hash="f40f0fd3515fc56c814561d3af831aaf"/></dir><file name="IndexController.php" hash="bbb0632165e947de0459790465a7cf15"/></dir><dir name="etc"><file name="adminhtml.xml" hash="bb9b1c2a9f1013bddb1b2b55b87aff0f"/><file name="config.xml" hash="4798afd31e1cbb2c4215fe4d195e356a"/><file name="system.xml" hash="4e7bda875b3eb2b80322caf3505f58a2"/></dir><dir name="sql"><dir name="bannerslider_setup"><file name="mysql4-install-1.0.0.php" hash="4fc62a1557029fa9ee43800a487e8c1b"/><file name="mysql4-install-1.9.1.php~" hash="409e2316453c4cba8bbdf09ed20e33d6"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><file name="bannerslider.xml" hash="8d7e57d6b2c66281ea14135275da8204"/></dir></dir></dir></dir><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="bannerslider.xml" hash="ab4742955b2a0c6f1da944df24a6cb33"/></dir><dir name="template"><dir name="bannerslider"><file name="index.phtml" hash="282dcbb75257d86774da71352d409e71"/></dir></dir></dir></dir></dir></target><target name="mage"><dir name="js"><dir name="bannerslider"><file name="jquery-1.js" hash="a13f7f208ba534681deadb1ec7a2e54a"/><file name="jquery.devrama.slider.js" hash="b566b79b9fcf058d3d56944c9f88ac8e"/></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>

@@ -1,0 +1,654 @@
+<?xml version="1.0"?>
+<config>
+    <tabs>
+        <ave translate="label" module="ave_colorswatch">
+            <label>Averun</label>
+            <sort_order>100</sort_order>
+        </ave>
+    </tabs>
+    <sections>
+        <ave_color_swatch module="ave_colorswatch" translate="label">
+            <label>Color Swatch for Configurable Products</label>
+            <sort_order>200</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <tab>ave</tab>
+            <groups>
+                <product_view_group translate="label">
+                    <label>Color Swatch for Configurable Products View</label>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <product_module_enable translate="label">
+                            <label>Enable Color Swatch</label>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_module_enable>
+                        <product_change_description translate="label tooltip comment">
+                            <label>Change Product Description</label>
+                            <sort_order>6</sort_order>
+                            <comment>Select if you want to change product description with color swatches</comment>
+                            <tooltip>Select if you want to change product description with color swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_change_description>
+                        <product_show_slider translate="label tooltip comment">
+                            <label>Show Slider</label>
+                            <sort_order>3</sort_order>
+                            <comment>Select if you want to enable slider for options on product page</comment>
+                            <tooltip>Select if you want to enable slider for options on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_show_slider>
+                        <product_show_default_input translate="label tooltip comment">
+                            <label>Show Default Attribute Input</label>
+                            <sort_order>6</sort_order>
+                            <comment>Select if you want to see default magento select apart with color swatches
+                            </comment>
+                            <tooltip>Select if you want to see default magento select apart with color swatches
+                            </tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_show_default_input>
+                        <product_show_tooltip translate="label tooltip comment">
+                            <label>Popup Info Box</label>
+                            <sort_order>7</sort_order>
+                            <comment>Select if you want to enable info box on mouse hover</comment>
+                            <tooltip>Select if you want to enable info box on mouse hover</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_show_tooltip>
+                        <product_tooltip_width translate="label tooltip comment">
+                            <label>Popup Info Width</label>
+                            <sort_order>8</sort_order>
+                            <comment>Set the width of the popup info box for each option inside product page</comment>
+                            <tooltip>Set the width of the popup info box for each option inside product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </product_tooltip_width>
+                        <product_tooltip_height translate="label tooltip comment">
+                            <label>Popup Info Height</label>
+                            <sort_order>9</sort_order>
+                            <comment>Set the height of the popup info box for each option inside product page</comment>
+                            <tooltip>Set the height of the popup info box for each option inside product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </product_tooltip_height>
+                        <check translate="label">
+                            <label>Flush Attribute Images Cache</label>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>ave_colorswatch/adminhtml_system_config_form_flushButton</frontend_model>
+                            <sort_order>20</sort_order>
+                            <comment>Press the button to see the updated Color Swatch images on the user end</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </check>
+                    </fields>
+                </product_view_group>
+                <product_list_group translate="label">
+                    <label>Color Swatch for Products in Category Page</label>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <list_module_enable translate="label">
+                            <label>Enable Color Swatch</label>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <comment>Please follow the extension Installation Guide instructions to enable Color Picker on the category page</comment>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_module_enable>
+                        <list_show_slider translate="label tooltip comment">
+                            <label>Show Slider</label>
+                            <sort_order>1</sort_order>
+                            <comment>Select if you want to enable slider for product options on category page</comment>
+                            <tooltip>Select if you want to enable slider for product options on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_show_slider>
+                        <list_show_default_input translate="label tooltip comment">
+                            <label>Show Default Attribute Input</label>
+                            <sort_order>2</sort_order>
+                            <comment>Select if you want to see default magento select apart with color swatches</comment>
+                            <tooltip>Select if you want to see default magento select apart with color swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_show_default_input>
+                        <product_change_name translate="label tooltip comment">
+                            <label>Change Product Name</label>
+                            <sort_order>6</sort_order>
+                            <comment>Select if you want to change product Name with color swatches</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </product_change_name>
+                        <list_mouseover_action translate="label">
+                            <label>Change Price If Mouse Over</label>
+                            <sort_order>11</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_mouseover_action>
+                        <list_product_image_size>
+                            <label>Product image size</label>
+                            <sort_order>5</sort_order>
+                            <comment>Set image size for product on category page</comment>
+                            <tooltip>Set image size for product on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </list_product_image_size>
+                        <grid_swatch_float>
+                            <label>Swatches aligning in Grid view</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ave_colorswatch/align</source_model>
+                            <comment>Set the aligning of option boxes on the category page in grid view</comment>
+                            <tooltip>Set the aligning of option boxes on the category page in grid view</tooltip>
+                            <sort_order>6</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </grid_swatch_float>
+                        <list_swatch_float>
+                            <label>Swatches aligning in List view</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ave_colorswatch/align</source_model>
+                            <comment>Set the aligning of option boxes on the category page in list view</comment>
+                            <tooltip>Set the aligning of option boxes on the category page in list view</tooltip>
+                            <sort_order>7</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </list_swatch_float>
+                        <list_show_tooltip translate="label tooltip comment">
+                            <label>Popup Info Box</label>
+                            <sort_order>8</sort_order>
+                            <comment>Select if you want to enable info box on mouse hover</comment>
+                            <tooltip>Select if you want to enable info box on mouse hover</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_show_tooltip>
+                        <list_tooltip_width translate="label tooltip comment">
+                            <label>Popup Info Width</label>
+                            <sort_order>9</sort_order>
+                            <comment>Set the width of the popup info box for each option</comment>
+                            <tooltip>Set the width of the popup info box for each option</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </list_tooltip_width>
+                        <list_tooltip_height translate="label tooltip comment">
+                            <label>Popup Info Height</label>
+                            <sort_order>10</sort_order>
+                            <comment>Set the height of the popup info box for each option</comment>
+                            <tooltip>Set the height of the popup info box for each option</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </list_tooltip_height>
+                        <list_multiselect_hint translate="label">
+                            <label>Show hint for option types: Checkbox, Multiple Select</label>
+                            <sort_order>12</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_multiselect_hint>
+                    </fields>
+                </product_list_group>
+                <style_settings translate="label comment">
+                    <label>Style Settings</label>
+                    <sort_order>4</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <swatch_width translate="label tooltip comment">
+                            <label>Swatch Width on Product Page</label>
+                            <sort_order>1</sort_order>
+                            <comment>Set the width of the color box for each option on product page</comment>
+                            <tooltip>Set the width of the color box for each option on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </swatch_width>
+                        <swatch_height translate="label tooltip comment">
+                            <label>Swatch Height on Product Page</label>
+                            <sort_order>2</sort_order>
+                            <comment>Set the height of the color box for each option on product page</comment>
+                            <tooltip>Set the height of the color box for each option on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </swatch_height>
+                        <swatch_attributes translate="label">
+                            <label>Product Attributes to Show as Small Swatches in Product Detail Page</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>ave_colorswatch/system_config_source_colorSwatch_configattribute</source_model>
+                            <sort_order>4</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <can_be_empty>1</can_be_empty>
+                        </swatch_attributes>
+                        <swatch_width_small translate="label tooltip comment">
+                            <label>Swatch Width Small on Product Page</label>
+                            <sort_order>6</sort_order>
+                            <comment>Set the width of the color box for each option on product page</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </swatch_width_small>
+                        <swatch_height_small translate="label tooltip comment">
+                            <label>Swatch Height Small on Product Page</label>
+                            <sort_order>8</sort_order>
+                            <comment>Set the height of the color box for each option on product page</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </swatch_height_small>
+                        <list_option_width translate="label tooltip comment">
+                            <label>Swatch Width on Category Page</label>
+                            <sort_order>13</sort_order>
+                            <comment>Set the width of the color box for each option on category page</comment>
+                            <tooltip>Set the width of the color box for each option on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </list_option_width>
+                        <list_option_height translate="label tooltip comment">
+                            <label>Swatch Height on Category Page</label>
+                            <sort_order>14</sort_order>
+                            <comment>Set the height of the color box for each option on category page</comment>
+                            <tooltip>Set the height of the color box for each option on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </list_option_height>
+                        <swatch_shape>
+                            <label>Swatches Shape</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ave_colorswatch/shape</source_model>
+                            <comment>Set the shape of option boxes on the product page</comment>
+                            <tooltip>Set the shape of option boxes on the product page</tooltip>
+                            <sort_order>15</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </swatch_shape>
+                        <option_border_size>
+                            <label>Border Size for Swatches</label>
+                            <sort_order>16</sort_order>
+                            <comment>Set border size for options swatches</comment>
+                            <tooltip>Set border size for options swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </option_border_size>
+                        <option_border_color>
+                            <label>Border Color for Swatches </label>
+                            <sort_order>17</sort_order>
+                            <validate>color {hash:true}</validate>
+                            <comment>Set border color for options swatches</comment>
+                            <tooltip>Set border color for options swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </option_border_color>
+                        <active_option_border_size>
+                            <label>Border Size for Active Swatches</label>
+                            <sort_order>18</sort_order>
+                            <comment>Set border size for active options swatches</comment>
+                            <tooltip>Set border size for active options swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </active_option_border_size>
+                        <active_option_border_color>
+                            <label>Border Color for Active Swatches </label>
+                            <sort_order>19</sort_order>
+                            <validate>color {hash:true}</validate>
+                            <comment>Set border color for active options swatches</comment>
+                            <tooltip>Set border color for active options swatches</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>text</frontend_type>
+                        </active_option_border_color>
+                        <use_crop translate="label">
+                            <label>Crop thumbnail images for Swatches</label>
+                            <sort_order>20</sort_order>
+                            <tooltip>After changing this option flush image cache for updated Color Picker images on the front end.</tooltip>
+                            <comment>After changing this option flush image cache for updated Color Picker images on the front end.</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </use_crop>
+                    </fields>
+                </style_settings>
+                <developer_tools translate="label comment">
+                    <label>Developer Section</label>
+                    <comment>To change the settings in case of necessity (when you exactly know what you're doing)
+                    </comment>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <get_simple_image tanslate="label">
+                            <label>Get image from simple products</label>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </get_simple_image>
+                        <use_price_simple tanslate="label">
+                            <label>Use price of simple products</label>
+                            <comment>simple product will be added to the cart but not configurable (test mode)</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </use_price_simple>
+                        <swatch_mouse_over tanslate="label comment">
+                            <label>Use hover effect on swatches</label>
+                            <comment>If disable the image will be changed on click</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>1</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </swatch_mouse_over>
+                        <image_width tanslate="label">
+                            <label>Image Width</label>
+                            <comment>Width of the default image on product page</comment>
+                            <tooltip>Width of the default image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>2</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </image_width>
+                        <image_height tanslate="label">
+                            <label>Image Height</label>
+                            <comment>Height of the default image on product page</comment>
+                            <tooltip>Height of the default image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>4</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </image_height>
+                        <image_constrain_only>
+                            <label>Image Constrain Only on Product Page</label>
+                            <comment>Set "Constrain Only" attribute for default image and zoom image on product page</comment>
+                            <tooltip>Set "Constrain Only" attribute for default image and zoom image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>8</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </image_constrain_only>
+                        <image_keep_frame>
+                            <label>Image Keep Frame on Product Page</label>
+                            <comment>Set "Keep Frame" attribute for default image and zoom image on product page</comment>
+                            <tooltip>Set "Keep Frame" attribute for default image and zoom image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>10</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </image_keep_frame>
+                        <list_image_keep_frame>
+                            <label>Image Keep Frame in List Mode</label>
+                            <comment>Set "Keep Frame" attribute to default image for products on category page in list mode</comment>
+                            <tooltip>Set "Keep Frame" attribute to default image for products on category page in list mode</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>12</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </list_image_keep_frame>
+                        <grid_image_keep_frame>
+                            <label>Image Keep Frame in Grid Mode</label>
+                            <comment>Set "Keep Frame" attribute to default image for products on category page in grid mode</comment>
+                            <tooltip>Set "Keep Frame" attribute to default image for products on category page in grid mode</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>14</sort_order>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                        </grid_image_keep_frame>
+                        <list_image_width tanslate="label">
+                            <label>List Image Width</label>
+                            <comment>Width of the default images for products on category page</comment>
+                            <tooltip>Width of the default images for products on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>16</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </list_image_width>
+                        <list_image_height tanslate="label">
+                            <label>List Image Height</label>
+                            <comment>Height of the default images for products on category page</comment>
+                            <tooltip>Height of the default images for products on category page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>18</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </list_image_height>
+                        <image_selector translate="label">
+                            <label>Image Selector</label>
+                            <comment>CSS selector responsible for product image identification</comment>
+                            <tooltip>CSS selector responsible for product image identification</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>20</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </image_selector>
+                        <product_name_selector translate="label">
+                            <label>Product Name Selector</label>
+                            <comment>CSS selector responsible for product name holder identification</comment>
+                            <tooltip>CSS selector responsible for product name holder identification</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>22</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </product_name_selector>
+                        <product_name_selector_list translate="label">
+                            <label>Product Name Selector on List</label>
+                            <comment>CSS selector responsible for product name holder identification</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>23</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </product_name_selector_list>
+                        <product_sku_selector translate="label">
+                            <label>Product Sku Selector</label>
+                            <comment>CSS selector responsible for product SKU holder identification</comment>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>23</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </product_sku_selector>
+                        <short_description_selector translate="label">
+                            <label>Short Description Selector</label>
+                            <comment>CSS selector responsible for product short description holder identification
+                            </comment>
+                            <tooltip>CSS selector responsible for product short description holder identification
+                            </tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>24</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </short_description_selector>
+                        <description_selector>translate="label">
+                            <label>Description Selector</label>
+                            <comment>CSS selector responsible for product description holder identification</comment>
+                            <tooltip>CSS selector responsible for product description holder identification</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>26</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </description_selector>
+                        <thumbnail_image_width tanslate="label">
+                            <label>Thumbnail Image Width</label>
+                            <comment>Width of the thumbnail gallery image on product page</comment>
+                            <tooltip>Width of the thumbnail gallery image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>28</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </thumbnail_image_width>
+                        <thumbnail_image_height tanslate="label">
+                            <label>Thumbnail Image Height</label>
+                            <comment>Height of the thumbnail gallery image on product page</comment>
+                            <tooltip>Height of the thumbnail gallery image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>29</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </thumbnail_image_height>
+                        <gallery_selector translate="label">
+                            <label>Gallery Selector</label>
+                            <comment>CSS selector responsible for product thumbnails container identification</comment>
+                            <tooltip>CSS selector responsible for product thumbnails container identification</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>30</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </gallery_selector>
+                        <gallery_image_selector translate="label">
+                            <label>Gallery Image Selector</label>
+                            <comment>CSS selector responsible for product thumbnails identification</comment>
+                            <tooltip>CSS selector responsible for product thumbnails identification</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>32</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </gallery_image_selector>
+                        <zoom_image_selector translate="label">
+                            <label>Zoom Image Selector</label>
+                            <comment>CSS selector responsible for product zoom image holder identification</comment>
+                            <tooltip>In case of Cloud Zoom should be selector to cloud zoom hyperlink tag</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>34</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </zoom_image_selector>
+                        <gallery_image_template translate="label">
+                            <label>Gallery Image Template</label>
+                            <comment>HTML template for each gallery thumbnail holder</comment>
+                            <tooltip>Variables: %image%, %zoom_image%, %thumbnail%, %alt%, %thumbnail%, %title%,
+                                %index%
+                            </tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>36</sort_order>
+                            <frontend_type>textarea</frontend_type>
+                        </gallery_image_template>
+                        <zoom_image_width translate="label">
+                            <label>Zoom Image Width</label>
+                            <comment>Width of the zoomed image on product page</comment>
+                            <tooltip>Width of the zoomed image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>38</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </zoom_image_width>
+                        <zoom_image_height translate="label">
+                            <label>Zoom Image Height</label>
+                            <comment>Height of the zoomed image on product page</comment>
+                            <tooltip>Height of the zoomed image on product page</tooltip>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <sort_order>40</sort_order>
+                            <frontend_type>text</frontend_type>
+                        </zoom_image_height>
+                    </fields>
+                </developer_tools>
+            </groups>
+        </ave_color_swatch>
+    </sections>
+</config>

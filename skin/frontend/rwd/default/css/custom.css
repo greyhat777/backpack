@@ -1,0 +1,28 @@
+.col-container {
+    display: table; /* Make the container element behave like a table */
+    width: 100%; /* Set full-width to expand the whole page */
+}
+
+.col {
+    display: table-cell; /* Make elements inside the container behave like table cells */
+}
+
+
+
+
+img.imgresponsive{
+  position:relative;
+  width:100%;
+  height:auto;
+  padding-left:10%;
+  left:-5%;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .col { 
+        display: block;
+        width: 100%;
+        padding-top:10%;
+    }
+}
