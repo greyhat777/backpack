@@ -4,7 +4,7 @@
     <div class="block-title">
         <strong><span>Newsletter</span></strong>
     </div>
-    <form action="http://127.0.0.1:8888/index.php/newsletter/subscriber/new/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" method="post" id="newsletter-validate-detail">
+    <form action="http://127.0.0.1:8888/backpack/index.php/newsletter/subscriber/new/?___SID=U" method="post" id="newsletter-validate-detail">
         <div class="block-content">
             <div class="form-subscribe-header">
                 <label for="newsletter">Sign Up for Our Newsletter:</label>
@@ -29,24 +29,24 @@
         <strong><span>Company</span></strong>
     </div>
     <ul>
-        <li><a href="http://127.0.0.1:8888/index.php/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->about-magento-demo-store/">About Us</a></li>
-        <li><a href="http://127.0.0.1:8888/index.php/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->contacts/">Contact Us</a></li>
-        <li><a href="http://127.0.0.1:8888/index.php/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->customer-service/">Customer Service</a></li>
-        <li><a href="http://127.0.0.1:8888/index.php/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->privacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
+        <li><a href="http://127.0.0.1:8888/backpack/index.php/?___SID=Uabout-magento-demo-store/">About Us</a></li>
+        <li><a href="http://127.0.0.1:8888/backpack/index.php/?___SID=Ucontacts/">Contact Us</a></li>
+        <li><a href="http://127.0.0.1:8888/backpack/index.php/?___SID=Ucustomer-service/">Customer Service</a></li>
+        <li><a href="http://127.0.0.1:8888/backpack/index.php/?___SID=Uprivacy-policy-cookie-restriction-mode/">Privacy Policy</a></li>
     </ul>
 </div><div class="links">
         <div class="block-title"><strong><span>Quick Links</span></strong></div>
         <ul>
-                                    <li class="first" ><a href="http://127.0.0.1:8888/index.php/catalog/seo_sitemap/category/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" title="Site Map" >Site Map</a></li>
-                                                <li ><a href="http://127.0.0.1:8888/index.php/catalogsearch/term/popular/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" title="Search Terms" >Search Terms</a></li>
-                                                <li class=" last" ><a href="http://127.0.0.1:8888/index.php/catalogsearch/advanced/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" title="Advanced Search" >Advanced Search</a></li>
+                                    <li class="first" ><a href="http://127.0.0.1:8888/backpack/index.php/catalog/seo_sitemap/category/?___SID=U" title="Site Map" >Site Map</a></li>
+                                                <li ><a href="http://127.0.0.1:8888/backpack/index.php/catalogsearch/term/popular/?___SID=U" title="Search Terms" >Search Terms</a></li>
+                                                <li class=" last" ><a href="http://127.0.0.1:8888/backpack/index.php/catalogsearch/advanced/?___SID=U" title="Advanced Search" >Advanced Search</a></li>
                         </ul>
 </div>
 <div class="links">
         <div class="block-title"><strong><span>Account</span></strong></div>
         <ul>
-                                    <li class="first" ><a href="http://127.0.0.1:8888/index.php/customer/account/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" title="My Account" >My Account</a></li>
-                                                <li class=" last" ><a href="http://127.0.0.1:8888/index.php/sales/guest/form/?<!--SID=0a52ce5f952e81b0e074c55efd597efcc01016de-->" title="Orders and Returns" >Orders and Returns</a></li>
+                                    <li class="first" ><a href="http://127.0.0.1:8888/backpack/index.php/customer/account/?___SID=U" title="My Account" >My Account</a></li>
+                                                <li class=" last" ><a href="http://127.0.0.1:8888/backpack/index.php/sales/guest/form/?___SID=U" title="Orders and Returns" >Orders and Returns</a></li>
                         </ul>
 </div>
         <address class="copyright">&copy; 2017 Backpacks4sale. All Rights Reserved.</address>
